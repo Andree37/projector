@@ -156,19 +156,13 @@ mod test {
     #[test]
     fn test_remove_key() -> Result<()> {
         let opts: Config = Opts {
-            args: vec![
-                String::from("rm"),
-                String::from("foo"),
-            ],
+            args: vec![String::from("rm"), String::from("foo")],
             pwd: None,
             config: None,
         }
         .try_into()?;
 
-        assert_eq!(
-            opts.operation,
-            Operation::Remove(String::from("foo"))
-        );
+        assert_eq!(opts.operation, Operation::Remove(String::from("foo")));
         return Ok(());
     }
 }
