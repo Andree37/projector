@@ -82,8 +82,8 @@ fn get_config(config: Option<PathBuf>) -> Result<PathBuf> {
     if let Some(v) = config {
         return Ok(v);
     }
-    let loc = std::env::var("~/Library/Preferences/").context("Unable to get home")?;
-    let mut loc = PathBuf::from(loc);
+
+    let mut loc = PathBuf::from("~/Library/Preferences/");
 
     loc.push("projector");
     loc.push("projector.json");
