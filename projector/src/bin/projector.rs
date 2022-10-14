@@ -1,10 +1,10 @@
-use clap::Parser;
 use anyhow::Result;
-use projector::{opts::Opts, config::Config};
+use clap::Parser;
+use projector::{config::Config, opts::Opts};
 
-fn main() -> Result<()>{
+fn main() -> Result<()> {
     let opts: Config = Opts::parse().try_into()?;
     println!("{:?}", opts);
 
-    return Ok(())
+    return Ok(());
 }
